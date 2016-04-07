@@ -6,6 +6,7 @@ window.Controls = (function() {
      * Key codes we're interested in.
      */
     var KEYS = {
+        1: 'mouse',
         32: 'space',
         37: 'left',
         38: 'up',
@@ -24,7 +25,10 @@ window.Controls = (function() {
         this.keys = {};
         $(window)
             .on('keydown', this._onKeyDown.bind(this))
-            .on('keyup', this._onKeyUp.bind(this));
+            .on('keyup', this._onKeyUp.bind(this))
+            .on('mousedown', this._onMouseDown.bind(this))
+            .on('mouseup', this._onMouseUp.bind(this))
+
     };
 
     Controls.prototype._onKeyDown = function(e) {
@@ -48,6 +52,28 @@ window.Controls = (function() {
             return false;
         }
     };
+
+    Controls.prototype._onMouseDown = function(e) {
+        if (e.which === 1 && !this.keys.mouse) {
+            this._didJump = true;
+        }
+
+        if (e.which in KEYS) {
+            var keyName = KEYS[e.which];
+            this.keys[keyName] = true;
+            return false;
+        }
+    };
+
+    Controls.prototype._onMouseUp = function(e) {
+        if (e.which in KEYS) {
+            var keyName = KEYS[e.which];
+            this.keys[keyName] = false;
+            return false;
+        }
+    }
+
+
 
     /**
      * Only answers true once until a key is pressed again.

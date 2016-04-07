@@ -178,4 +178,5 @@ background: blue;
 
 .muteMusic {
 	width: 40px;
+	cursor: pointer;
 }
