@@ -17,6 +17,12 @@ window.Game = (function() {
 		this.pipe4 = new window.Pipe(this.el.find('.PT2'), this, true, 'PT2');
 		this.pipe5 = new window.Pipe(this.el.find('.PB3'), this, true, 'PB3');
 		this.pipe6 = new window.Pipe(this.el.find('.PT3'), this, true, 'PT3');
+
+		this.cloud1 = new window.Cloud(this.el.find('.D1'), this, true, 'D1');
+		this.cloud2 = new window.Cloud(this.el.find('.D2'), this, true, 'D2');
+		this.cloud3 = new window.Cloud(this.el.find('.D3'), this, true, 'D3');
+		this.cloud4 = new window.Cloud(this.el.find('.D4'), this, true, 'D4');
+		this.cloud5 = new window.Cloud(this.el.find('.D5'), this, true, 'D5');
 		
 		this.ground = new window.Ground(this.el.find('.Ground'), this);
 		this.isPlaying = false;
@@ -50,6 +56,12 @@ window.Game = (function() {
 		this.pipe5.onFrame(delta);
 		this.pipe6.onFrame(delta);
 
+		this.cloud1.onFrame(delta);
+		this.cloud2.onFrame(delta);
+		this.cloud3.onFrame(delta);
+		this.cloud4.onFrame(delta);
+		this.cloud5.onFrame(delta);
+
 		this.ground.onFrame(delta);
 
 		// Request next frame.
@@ -80,6 +92,12 @@ window.Game = (function() {
 		this.pipe4.reset(true);
 		this.pipe5.reset(true);
 		this.pipe6.reset(true);
+
+		/*this.cloud1.reset(true);
+		this.cloud2.reset(true);
+		this.cloud3.reset(true);
+		this.cloud4.reset(true);
+		this.cloud5.reset(true);*/
 
 		this.ground.reset();
 	};

@@ -1,179 +1,256 @@
 /*ATH: 
-	Game height: 57,6em
-	Flappy bird height: 5em
-	Ground: 10em
+  Game height: 57,6em
+  Flappy bird height: 5em
+  Ground: 10em
 Til að komast í gegnum gatið þarf það að vera 4x hæð hans
-	Pipe gap = 20em
+  Pipe gap = 20em
 Svo pipe-in sjáist pottþétt verða þau að vera allavega 5em
-	Pipe min = 5em
+  Pipe min = 5em
 Annars eiga PipeTop og PipeBottom að taka hitt plássið (57,6em-20em-10em) sem er 27,6em
-	Pipe sum = 27,6em
-	Pipe max = 22,6em
-	Pipe 50/50 = 13,8em
+  Pipe sum = 27,6em
+  Pipe max = 22,6em
+  Pipe 50/50 = 13,8em
 */
+
 /*
 Annars eru 6 partar, 3 neðri helmingar og 3 efri
 Þeir eiga svo að færast til hliðar
 Í byrjun eiga þeir ekki að sjást
 Til að byrja með eru þeir fyrst harðkóðaðir og eiga svo að breytast
 */
+
 .Ground {
-    position: absolute;
-
-    margin-top: -0.5em;
-    margin-left: -0.5em;
-
-    height: 10em;
-	width: 10em;
-	background: brown;
+  position: absolute;
+  margin-top: -0.5em;
+  margin-left: -0.5em;
+  height: 10em;
+  width: 10em;
+  background: brown;
 }
 
 .PB1 {
-    position: absolute;
-
-    margin-top: -0.5em;
-    margin-left: -0.5em;
-
-    height: 10em;
-	width: 10em;
-	background: green;
+  position: absolute;
+  margin-top: -0.5em;
+  margin-left: -0.5em;
+  height: 10em;
+  width: 10em;
+  background: green;
 }
+
 .PT1 {
-     position: absolute;
-
-    margin-top: -0.5em;
-    margin-left: -0.5em;
-
-    height: 10em;
-	width: 10em;
-	background: green;
+  position: absolute;
+  margin-top: -0.5em;
+  margin-left: -0.5em;
+  height: 10em;
+  width: 10em;
+  background: green;
 }
+
 .PB2 {
-   position: absolute;
-
-    margin-top: -0.5em;
-    margin-left: -0.5em;
-
-    height: 10em;
-	width: 10em;
-	background: green;
+  position: absolute;
+  margin-top: -0.5em;
+  margin-left: -0.5em;
+  height: 10em;
+  width: 10em;
+  background: green;
 }
+
 .PT2 {
-   position: absolute;
-
-    margin-top: -0.5em;
-    margin-left: -0.5em;
-
-    height: 10em;
-	width: 10em;
-	background: green;
+  position: absolute;
+  margin-top: -0.5em;
+  margin-left: -0.5em;
+  height: 10em;
+  width: 10em;
+  background: green;
 }
+
 .PB3 {
-   position: absolute;
-
-    margin-top: -0.5em;
-    margin-left: -0.5em;
-
-    height: 10em;
-	width: 10em;
-	background: green;
+  position: absolute;
+  margin-top: -0.5em;
+  margin-left: -0.5em;
+  height: 10em;
+  width: 10em;
+  background: green;
 }
+
 .PT3 {
-   position: absolute;
+  position: absolute;
+  margin-top: -0.5em;
+  margin-left: -0.5em;
+  height: 10em;
+  width: 10em;
+  background: green;
+}
 
-    margin-top: -0.5em;
-    margin-left: -0.5em;
+.D1 {
+  position: absolute;
+  margin-top: -0.5em;
+  margin-left: -0.5em;
+  height: 5em;
+  width: 5em;
+  background: pink;
+  background-image: url("../images/niall.jpg");
+  background-size: 100% 100%;
+  opacity: 0.5;
+}
 
-    height: 10em;
-	width: 10em;
-	background: green;
+.D2 {
+  position: absolute;
+  margin-top: -0.5em;
+  margin-left: -0.5em;
+  height: 5em;
+  width: 5em;
+  background: pink;
+  background-image: url("../images/zayne.jpg");
+  background-size: 100% 100%;
+  opacity: 0.5;
+}
+
+.D3 {
+  position: absolute;
+  margin-top: -0.5em;
+  margin-left: -0.5em;
+  height: 15em;
+  width: 15em;
+  background: pink;
+  background-image: url("../images/liam.jpg");
+  background-size: 100% 100%;
+  opacity: 0.5;
+}
+
+.D4 {
+  position: absolute;
+  margin-top: -0.5em;
+  margin-left: -0.5em;
+  height: 10em;
+  width: 10em;
+  background: pink;
+  background-image: url("../images/louis.jpg");
+  background-size: 100% 100%;
+  opacity: 0.5;
+}
+
+.D5 {
+  position: absolute;
+  margin-top: -0.5em;
+  margin-left: -0.5em;
+  height: 20em;
+  width: 20em;
+  background: pink;
+  background-image: url("../images/harry.jpg");
+  background-size: 100% 100%;
+  opacity: 0.5;
 }
 
 .Player {
-    position: absolute;
-    margin-top: -0.5em;
-    margin-left: -0.5em;
-    width: 5em;
-    height: 5em;
-    background: yellow;
-    /*transform: translate(40em, 20em)*/
+  position: absolute;
+  margin-top: -0.5em;
+  margin-left: -0.5em;
+  width: 5em;
+  height: 5em;
+  background: yellow;
+  /*transform: translate(40em, 20em)*/
 }
 
 .Player-wings {
-	position: absolute;
-    left: 0.5em;
-    top: 2.2em;
-    height: 1.5em;
-    width: 3.2em;
-    background: red;
-    transform-origin: top left;
-    animation: 0.3s flap alternate infinite;
+  position: absolute;
+  left: 0.5em;
+  top: 2.2em;
+  height: 1.5em;
+  width: 3.2em;
+  background: red;
+  -webkit-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: 0.3s flap alternate infinite;
+  animation: 0.3s flap alternate infinite;
+}
+
+@-webkit-keyframes flap {
+  from {
+    -webkit-transform: rotateX(0);
+    transform: rotateX(0);
+  }
+
+  to {
+    -webkit-transform: rotateX(180deg);
+    transform: rotateX(180deg);
+  }
 }
 
 @keyframes flap {
-	from {
-		transform: rotateX(0);
-	}
+  from {
+    -webkit-transform: rotateX(0);
+    transform: rotateX(0);
+  }
 
-	to {
-		transform: rotateX(180deg);
-	}
+  to {
+    -webkit-transform: rotateX(180deg);
+    transform: rotateX(180deg);
+  }
 }
 
 .Scoreboard {
-	position: absolute;
-	left: 50%;
-	top: 10em;
-	height: 30em;
-	width: 40em;
-	margin-left: -20em;
-	box-sizing: border-box;
-	background: purple;
-	text-align: center;
-	-webkit-transform: translate(0, -40em);
-	-webkit-transition: -webkit-transform 0.5s;
+  position: absolute;
+  left: 50%;
+  top: 10em;
+  height: 30em;
+  width: 40em;
+  margin-left: -20em;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background: purple;
+  text-align: center;
+  -webkit-transform: translate(0, -40em);
+  -webkit-transition: -webkit-transform 0.5s;
 }
 
 /**
 * Reset transform to animate it into the correct spot on the screen.
 */
+
 .Scoreboard.is-visible {
-	-webkit-transform: none;
+  -webkit-transform: none;
 }
 
 .Scoreboard-restart {
-	margin-top: 20em;
-	font-size: inherit;
-	padding: 0.4em 1.5em;
-	border: 0.2em solid white;
-	background: none;
-	cursor: pointer;
+  margin-top: 20em;
+  font-size: inherit;
+  padding: 0.4em 1.5em;
+  border: 0.2em solid white;
+  background: none;
+  cursor: pointer;
 }
+
 .Scoreboard-restartText {
-font-family: 'Comic Sans MS', serif;
-font-size: 2.4em;
-color: white;
+  font-family: 'Comic Sans MS', serif;
+  font-size: 2.4em;
+  color: white;
 }
+
 body {
-background: black;
+  background: black;
 }
+
 .browsehappy {
-margin: 0.2em 0;
-background: ?#?ccc?;
-color: #000;
-padding: 0.2em 0;
+  margin: 0.2em 0;
+  background: ?#?ccc?;
+  color: #000;
+  padding: 0.2em 0;
 }
+
 .GameCanvas {
-font-size: 10px;
-position: absolute;
-left: 50%;
-top: 50%;
-width: 102.4em;
-height: 57.6em;
-margin-left: -51.2em;
-margin-top: -28.8em;
-overflow: hidden;
-background: blue;
+  font-size: 10px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 102.4em;
+  height: 57.6em;
+  margin-left: -51.2em;
+  margin-top: -28.8em;
+  overflow: hidden;
+  background: blue;
+  background-image: url("../images/clouds.jpg");
+  background-size: 100% 100%;
 }
 
 .muteMusic {
