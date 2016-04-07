@@ -254,9 +254,10 @@ body {
 }
 
 #mute {
-	width: 300px;
-    height: 123px;
+	width: 70px;
+    height: 70px;
     cursor: pointer;
     background-repeat: no-repeat;
     background-size: 65px;
+    background-image: url("/images/mute.png");
 }
