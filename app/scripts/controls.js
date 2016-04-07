@@ -29,6 +29,8 @@ window.Controls = (function() {
             .on('keyup', this._onKeyUp.bind(this))
             .on('mousedown', this._onMouseDown.bind(this))
             .on('mouseup', this._onMouseUp.bind(this))
+            .on('touchstart', this._onTouchStart.bind(this))
+            .on('touchend', this._onTouchStart.bind(this))
 
     };
 
@@ -74,8 +76,8 @@ window.Controls = (function() {
         }
     }
 
-    Controls.prototype._tap = function(e) {
-        if (e.which === 1 && !this.keys.mouse) {
+    Controls.prototype._onTouchStart = function(e) {
+        if (e.which === 1 && !this.keys.tap) {
             this._didJump = true;
         }
 
@@ -86,13 +88,14 @@ window.Controls = (function() {
         }
     };
 
-    Controls.prototype._onMouseUp = function(e) {
+    Controls.prototype._onTouchEnd = function(e) {
         if (e.which in KEYS) {
             var keyName = KEYS[e.which];
             this.keys[keyName] = false;
             return false;
         }
     }
+
 
 
 

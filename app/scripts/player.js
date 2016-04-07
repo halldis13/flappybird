@@ -42,7 +42,7 @@ window.Player = (function() {
 			this.pos.y -= delta * SPEED;
 		}*/
 		//margfalda með 5 svo hann hækki meira en hann fellur
-		if (Controls.keys.space || Controls.keys.mouse){
+		if (Controls.keys.space || Controls.keys.mouse || Controls.keys.tap){
 			this.pos.y -= (delta * SPEED)*5;
 		}
 
