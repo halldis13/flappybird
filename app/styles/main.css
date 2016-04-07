@@ -39,49 +39,54 @@ Til að byrja með eru þeir fyrst harðkóðaðir og eiga svo að breytast
 	background: green;
 }
 .PT1 {
-    position: absolute;
-	left: 33%;
-	top: 0em;
-	height: 13.8em;
+     position: absolute;
+
+    margin-top: -0.5em;
+    margin-left: -0.5em;
+
+    height: 10em;
 	width: 10em;
-	margin-left: -20em;
-	background: lime;
+	background: green;
 }
 .PB2 {
-    position: absolute;
-	left: 66%;
-	bottom: 10em;
-	height: 5em;
+   position: absolute;
+
+    margin-top: -0.5em;
+    margin-left: -0.5em;
+
+    height: 10em;
 	width: 10em;
-	margin-left: -20em;
-	background: orange;
+	background: green;
 }
 .PT2 {
-    position: absolute;
-	left: 66%;
-	top: 0em;
-	height: 22.6em;
+   position: absolute;
+
+    margin-top: -0.5em;
+    margin-left: -0.5em;
+
+    height: 10em;
 	width: 10em;
-	margin-left: -20em;
-	background: red;
+	background: green;
 }
 .PB3 {
-    position: absolute;
-	left: 99%;
-	bottom: 10em;
-	height: 22.6em;
+   position: absolute;
+
+    margin-top: -0.5em;
+    margin-left: -0.5em;
+
+    height: 10em;
 	width: 10em;
-	margin-left: -20em;
-	background: pink;
+	background: green;
 }
 .PT3 {
-    position: absolute;
-	left: 99%;
-	top: 0em;
-	height: 5em;
+   position: absolute;
+
+    margin-top: -0.5em;
+    margin-left: -0.5em;
+
+    height: 10em;
 	width: 10em;
-	margin-left: -20em;
-	background: magenta;
+	background: green;
 }
 
 .Player {

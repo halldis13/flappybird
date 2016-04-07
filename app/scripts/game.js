@@ -10,7 +10,14 @@ window.Game = (function() {
 	var Game = function(el) {
 		this.el = el;
 		this.player = new window.Player(this.el.find('.Player'), this);
-		this.pipe1 = new window.Pipe(this.el.find('.PB1'), this, true);
+
+		this.pipe1 = new window.Pipe(this.el.find('.PB1'), this, true, 'PB1');
+		this.pipe2 = new window.Pipe(this.el.find('.PT1'), this, true, 'PT1');
+		this.pipe3 = new window.Pipe(this.el.find('.PB2'), this, true, 'PB2');
+		this.pipe4 = new window.Pipe(this.el.find('.PT2'), this, true, 'PT2');
+		this.pipe5 = new window.Pipe(this.el.find('.PB3'), this, true, 'PB3');
+		this.pipe6 = new window.Pipe(this.el.find('.PT3'), this, true, 'PT3');
+		
 		this.ground = new window.Ground(this.el.find('.Ground'), this);
 		this.isPlaying = false;
 
@@ -35,7 +42,14 @@ window.Game = (function() {
 
 		// Update game entities.
 		this.player.onFrame(delta);
+
 		this.pipe1.onFrame(delta);
+		this.pipe2.onFrame(delta);
+		this.pipe3.onFrame(delta);
+		this.pipe4.onFrame(delta);
+		this.pipe5.onFrame(delta);
+		this.pipe6.onFrame(delta);
+
 		this.ground.onFrame(delta);
 
 		// Request next frame.
@@ -59,7 +73,14 @@ window.Game = (function() {
 	 */
 	Game.prototype.reset = function() {
 		this.player.reset();
-		this.pipe1.reset();
+
+		this.pipe1.reset(true);
+		this.pipe2.reset(true);
+		this.pipe3.reset(true);
+		this.pipe4.reset(true);
+		this.pipe5.reset(true);
+		this.pipe6.reset(true);
+
 		this.ground.reset();
 	};
 
