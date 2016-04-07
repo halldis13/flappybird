@@ -253,8 +253,10 @@ body {
   background-size: 100% 100%;
 }
 
-.mute {
-	width: 10px;
-	cursor: pointer;
-	background-repeat: no-repeat;
+#mute {
+	width: 300px;
+    height: 123px;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-size: 65px;
 }

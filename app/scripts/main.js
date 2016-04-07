@@ -16,13 +16,13 @@ $(function() {
     	if(song.muted === true) {
     		song.muted = false;
     		crash.muted = false;
-    		mute.style.backgroundImage = ('url("/images/unmute.png")');
+    		mute.style.backgroundImage = ('url("/images/mute.png")');
     	}
 
     	else {
     		song.muted = true;
     		crash.muted = true;
-    		mute.style.backgroundImage = ('url("/images/mute.png")');
+    		mute.style.backgroundImage = ('url("/images/unmute.png")');
     	}
     }
 });
