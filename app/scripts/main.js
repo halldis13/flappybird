@@ -8,7 +8,7 @@ $(function() {
     var game = new window.Game($('.GameCanvas'));
     game.start();
 
-    var song = document.getElementById('SongFile');
+    var song = document.getElementById('1D');
     var crash = document.getElementById('crash');
     var mute = document.getElementById('mute');
 
