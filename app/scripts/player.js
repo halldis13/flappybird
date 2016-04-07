@@ -47,7 +47,7 @@ window.Player = (function() {
 		}
 
 		$( ".GameCanvas" ).mousedown(function() {
-  			this.pos.y -= (delta * SPEED)*5;
+  			this.pos.y -= (delta * SPEED)*4;
 		});
 
 		//test
