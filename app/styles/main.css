@@ -25,68 +25,68 @@ Til að byrja með eru þeir fyrst harðkóðaðir og eiga svo að breytast
 
     height: 10em;
 	width: 10em;
-
-	/*left: 19.5%;
-	bottom: 0em; 
-	right: 0em;
-	/*width: 102.4em;
-	margin-right: 0em;*/
 	background: brown;
 }
 
-.PipeBottom1 {
+.PB1 {
     position: absolute;
-	left: 33%;
-	bottom: 10em;
-	height: 13.8em;
+
+    margin-top: -0.5em;
+    margin-left: -0.5em;
+
+    height: 10em;
 	width: 10em;
-	margin-left: -20em;
 	background: green;
 }
-.PipeTop1 {
-    position: absolute;
-	left: 33%;
-	top: 0em;
-	height: 13.8em;
+.PT1 {
+     position: absolute;
+
+    margin-top: -0.5em;
+    margin-left: -0.5em;
+
+    height: 10em;
 	width: 10em;
-	margin-left: -20em;
-	background: lime;
+	background: green;
 }
-.PipeBottom2 {
-    position: absolute;
-	left: 66%;
-	bottom: 10em;
-	height: 5em;
+.PB2 {
+   position: absolute;
+
+    margin-top: -0.5em;
+    margin-left: -0.5em;
+
+    height: 10em;
 	width: 10em;
-	margin-left: -20em;
-	background: orange;
+	background: green;
 }
-.PipeTop2 {
-    position: absolute;
-	left: 66%;
-	top: 0em;
-	height: 22.6em;
+.PT2 {
+   position: absolute;
+
+    margin-top: -0.5em;
+    margin-left: -0.5em;
+
+    height: 10em;
 	width: 10em;
-	margin-left: -20em;
-	background: red;
+	background: green;
 }
-.PipeBottom3 {
-    position: absolute;
-	left: 99%;
-	bottom: 10em;
-	height: 22.6em;
+.PB3 {
+   position: absolute;
+
+    margin-top: -0.5em;
+    margin-left: -0.5em;
+
+    height: 10em;
 	width: 10em;
-	margin-left: -20em;
-	background: pink;
+	background: green;
 }
-.PipeTop3 {
-    position: absolute;
-	left: 99%;
-	top: 0em;
-	height: 5em;
+.PT3 {
+   position: absolute;
+
+    margin-top: -0.5em;
+    margin-left: -0.5em;
+
+    height: 10em;
 	width: 10em;
-	margin-left: -20em;
-	background: magenta;
+	background: green;
 }
 
 .Player {
