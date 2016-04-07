@@ -15,6 +15,7 @@ window.Player = (function() {
 		this.el = el;
 		this.game = game;
 		this.pos = { x: 0, y: 0 };
+		this.sound = document.getElementById('crash');
 	};
 
 	/**
@@ -58,8 +59,8 @@ window.Player = (function() {
 	};
 
 	Player.prototype.checkCollisionWithBounds = function() {
-		if (this.pos.y < 0 ||
-			this.pos.y + HEIGHT > this.game.WORLD_HEIGHT-9.5) {
+		if (this.pos.y < 0 || this.pos.y + HEIGHT > this.game.WORLD_HEIGHT-9.5) {
+			this.sound.play();
 			return this.game.gameover();
 		}
 	};

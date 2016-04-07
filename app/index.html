@@ -24,13 +24,22 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        <audio id="sound" autoplay="autoplay">
-            <source src="SoundFile.mp3" type="audio/mp3">
+        <!--<audio id="songFile" autoplay loop> -->
+
+        <audio id="SongFile" autoplay="autoplay" loop="loop">
+                <source src="/music/SongFile.mp3" type="audio/mp3">
         </audio>
 
-        <img src="mute.png" class="muteMusic" onclick="document.getElementById('sound').pause()" />
+        <div id="mute">_</div>
+
+       <!-- <img src="mute.png" class="muteMusic" onclick="document.getElementById('sound').pause()" />-->
 
         <div class="GameCanvas">
+
+            <audio id="crash">
+                <source src="/music/crash.mp3" type="audio/mp3">
+            </audio>-->
+
             <div class="Player">
                 <div class="Player-wings"></div>
             </div>
