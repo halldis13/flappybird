@@ -254,5 +254,6 @@ body {
 }
 
 .muteMusic {
-  width: 40px;
+	width: 40px;
+	cursor: pointer;
 }
