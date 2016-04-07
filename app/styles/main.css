@@ -1,10 +1,96 @@
+/*ATH: 
+	Game height: 57,6em
+	Flappy bird height: 5em
+	Ground: 10em
+Til að komast í gegnum gatið þarf það að vera 4x hæð hans
+	Pipe gap = 20em
+Svo pipe-in sjáist pottþétt verða þau að vera allavega 5em
+	Pipe min = 5em
+Annars eiga PipeTop og PipeBottom að taka hitt plássið (57,6em-20em-10em) sem er 27,6em
+	Pipe sum = 27,6em
+	Pipe max = 22,6em
+	Pipe 50/50 = 13,8em
+*/
+/*
+Annars eru 6 partar, 3 neðri helmingar og 3 efri
+Þeir eiga svo að færast til hliðar
+Í byrjun eiga þeir ekki að sjást
+Til að byrja með eru þeir fyrst harðkóðaðir og eiga svo að breytast
+*/
+.Ground {
+    position: absolute;
+	/*left: 19.5%;*/
+	bottom: 0em;
+	height: 10em;
+	width: 10em; 
+	right: 0em;
+	/*width: 102.4em;*/
+	//margin-right: 0em;
+	background: brown;
+}
+
+.PipeBottom1 {
+    position: absolute;
+	left: 33%;
+	bottom: 10em;
+	height: 13.8em;
+	width: 10em;
+	margin-left: -20em;
+	background: green;
+}
+.PipeTop1 {
+    position: absolute;
+	left: 33%;
+	top: 0em;
+	height: 13.8em;
+	width: 10em;
+	margin-left: -20em;
+	background: lime;
+}
+.PipeBottom2 {
+    position: absolute;
+	left: 66%;
+	bottom: 10em;
+	height: 5em;
+	width: 10em;
+	margin-left: -20em;
+	background: orange;
+}
+.PipeTop2 {
+    position: absolute;
+	left: 66%;
+	top: 0em;
+	height: 22.6em;
+	width: 10em;
+	margin-left: -20em;
+	background: red;
+}
+.PipeBottom3 {
+    position: absolute;
+	left: 99%;
+	bottom: 10em;
+	height: 22.6em;
+	width: 10em;
+	margin-left: -20em;
+	background: pink;
+}
+.PipeTop3 {
+    position: absolute;
+	left: 99%;
+	top: 0em;
+	height: 5em;
+	width: 10em;
+	margin-left: -20em;
+	background: magenta;
+}
+
 .Player {
     position: absolute;
     margin-top: -0.5em;
     margin-left: -0.5em;
     width: 5em;
     height: 5em;
-    background: blue;
+    background: yellow;
     /*transform: translate(40em, 20em)*/
 }
 
@@ -14,7 +100,7 @@
     top: 2.2em;
     height: 1.5em;
     width: 3.2em;
-    background: yellow;
+    background: red;
     transform-origin: top left;
     animation: 0.3s flap alternate infinite;
 }
@@ -82,5 +168,5 @@ height: 57.6em;
 margin-left: -51.2em;
 margin-top: -28.8em;
 overflow: hidden;
-background: red;
+background: blue;
 }

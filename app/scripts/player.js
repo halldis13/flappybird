@@ -43,6 +43,7 @@ window.Player = (function() {
 		if (Controls.keys.space){
 			this.pos.y -= (delta * SPEED)*5;
 		}
+		//test
 		this.pos.y += delta * SPEED;
 
 		this.checkCollisionWithBounds();
@@ -52,10 +53,8 @@ window.Player = (function() {
 	};
 
 	Player.prototype.checkCollisionWithBounds = function() {
-		if (this.pos.x < 0 ||
-			this.pos.x + WIDTH > this.game.WORLD_WIDTH ||
-			this.pos.y < 0 ||
-			this.pos.y + HEIGHT > this.game.WORLD_HEIGHT) {
+		if (this.pos.y < 0 ||
+			this.pos.y + HEIGHT > this.game.WORLD_HEIGHT-9.5) {
 			return this.game.gameover();
 		}
 	};

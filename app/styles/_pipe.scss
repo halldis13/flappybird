@@ -1,0 +1,15 @@
+
+.Pipe {
+    // Absolutely position entities at 0,0 and use transform to
+    // move it around.
+    position: absolute;
+    margin-top: -0.5em;
+    margin-left: -0.5em;
+    width: em(50px);
+    height: em(50px);
+
+    background: green;
+
+    transform: translateZ(0);
+}
+
