@@ -26,6 +26,7 @@ window.Player = (function() {
 	};
 
 	Player.prototype.onFrame = function(delta) {
+		/*commentaði út því hann á bara að breyta um y stöðu þegar ýtt er á space
 		if (Controls.keys.right) {
 			this.pos.x += delta * SPEED;
 		}
@@ -37,7 +38,12 @@ window.Player = (function() {
 		}
 		if (Controls.keys.up) {
 			this.pos.y -= delta * SPEED;
+		}*/
+		//margfalda með 5 svo hann hækki meira en hann fellur
+		if (Controls.keys.space){
+			this.pos.y -= (delta * SPEED)*5;
 		}
+		this.pos.y += delta * SPEED;
 
 		this.checkCollisionWithBounds();
 

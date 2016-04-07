@@ -17,7 +17,8 @@ grunt server
 ```
 
 ## TODO
-* (20%) The player character always stays in the same x position. Clicking space bar, clicking or tapping the screen makes the character jump up by a small amount, otherwise it falls down.
+* X(20%) The player character always stays in the same x position. Clicking space bar, clicking or tapping the screen makes the character jump up by a small amount, otherwise it falls down.
+	* ATH, gera þannig að click og tapp geri það sama og space bar
 * (10%) Pipes and the ground slowly move to the left.
 * (10%) If the player collides with the ground or a pipe, he loses instantly.
 * (5%) Gets one point for every gap that the player successfully passes.
