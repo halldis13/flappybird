@@ -260,4 +260,7 @@ body {
     background-repeat: no-repeat;
     background-size: 65px;
     background-image: url("/images/mute.png");
+    float: left;
+    margin-top: 510px;
+    margin-left: 956px;
 }
