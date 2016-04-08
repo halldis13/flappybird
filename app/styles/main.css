@@ -248,8 +248,8 @@ Til að byrja með eru þeir fyrst harðkóðaðir og eiga svo að breytast
   position: absolute;
   margin-top: -0.5em;
   margin-left: -0.5em;
-  height: 20em;
-  width: 20em;
+  height: 15em;
+  width: 15em;
   background: pink;
   background-image: url("../images/harry.jpg");
   background-size: 100% 100%;
