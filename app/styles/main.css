@@ -19,14 +19,128 @@ Annars eru 6 partar, 3 neðri helmingar og 3 efri
 Til að byrja með eru þeir fyrst harðkóðaðir og eiga svo að breytast
 */
 
-.Ground {
+.G1{
   position: absolute;
   margin-top: -0.5em;
   margin-left: -0.5em;
   height: 10em;
   width: 10em;
   background: brown;
+  background-image: url("../images/ground.png");
+  background-size: 100% 100%;
 }
+.G2{
+  position: absolute;
+  margin-top: -0.5em;
+  margin-left: -0.5em;
+  height: 10em;
+  width: 10em;
+  background: brown;
+  background-image: url("../images/ground.png");
+  background-size: 100% 100%;
+}
+.G3{
+  position: absolute;
+  margin-top: -0.5em;
+  margin-left: -0.5em;
+  height: 10em;
+  width: 10em;
+  background: brown;
+  background-image: url("../images/ground.png");
+  background-size: 100% 100%;
+}
+.G4{
+  position: absolute;
+  margin-top: -0.5em;
+  margin-left: -0.5em;
+  height: 10em;
+  width: 10em;
+  background: brown;
+  background-image: url("../images/ground.png");
+  background-size: 100% 100%;
+}
+.G5{
+  position: absolute;
+  margin-top: -0.5em;
+  margin-left: -0.5em;
+  height: 10em;
+  width: 10em;
+  background: brown;
+  background-image: url("../images/ground.png");
+  background-size: 100% 100%;
+}
+.G6{
+  position: absolute;
+  margin-top: -0.5em;
+  margin-left: -0.5em;
+  height: 10em;
+  width: 10em;
+  background: brown;
+  background-image: url("../images/ground.png");
+  background-size: 100% 100%;
+}
+.G7{
+  position: absolute;
+  margin-top: -0.5em;
+  margin-left: -0.5em;
+  height: 10em;
+  width: 10em;
+  background: brown;
+  background-image: url("../images/ground.png");
+  background-size: 100% 100%;
+}
+.G8{
+  position: absolute;
+  margin-top: -0.5em;
+  margin-left: -0.5em;
+  height: 10em;
+  width: 10em;
+  background: brown;
+  background-image: url("../images/ground.png");
+  background-size: 100% 100%;
+}
+.G9{
+  position: absolute;
+  margin-top: -0.5em;
+  margin-left: -0.5em;
+  height: 10em;
+  width: 10em;
+  background: brown;
+  background-image: url("../images/ground.png");
+  background-size: 100% 100%;
+}
+.G10{
+  position: absolute;
+  margin-top: -0.5em;
+  margin-left: -0.5em;
+  height: 10em;
+  width: 10em;
+  background: brown;
+  background-image: url("../images/ground.png");
+  background-size: 100% 100%;
+}
+.G11{
+  position: absolute;
+  margin-top: -0.5em;
+  margin-left: -0.5em;
+  height: 10em;
+  width: 10em;
+  background: brown;
+  background-image: url("../images/ground.png");
+  background-size: 100% 100%;
+}
+
+.G12{
+  position: absolute;
+  margin-top: -0.5em;
+  margin-left: -0.5em;
+  height: 10em;
+  width: 10em;
+  background: brown;
+  background-image: url("../images/ground.png");
+  background-size: 100% 100%;
+}
+
 
 .PB1 {
   position: absolute;
@@ -134,8 +248,8 @@ Til að byrja með eru þeir fyrst harðkóðaðir og eiga svo að breytast
   position: absolute;
   margin-top: -0.5em;
   margin-left: -0.5em;
-  height: 20em;
-  width: 20em;
+  height: 15em;
+  width: 15em;
   background: pink;
   background-image: url("../images/harry.jpg");
   background-size: 100% 100%;
@@ -222,11 +336,27 @@ Til að byrja með eru þeir fyrst harðkóðaðir og eiga svo að breytast
 }
 
 .Scoreboard-restartText {
-  font-family: 'Comic Sans MS', serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 2.4em;
   color: white;
 }
 
+.FinalScore{
+  /*margin-top: 10em;*/
+  padding: 0.4em 1.5em;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2.4em;
+  color: white;
+}
+.Score{
+  /*margin-top: 10em;*/
+  position: absolute;
+  top: 20%;
+  left: 30%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2.4em;
+  color: yellow;
+}
 body {
   background: black;
 }
