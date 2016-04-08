@@ -17,6 +17,7 @@ window.Player = (function() {
 		this.pos = { x: 0, y: 0 };
 		this.crashsound = document.getElementById('crash');
 		this.flapsound = document.getElementById('flap');
+		this.score = 0;
 	};
 
 	/**
@@ -25,6 +26,7 @@ window.Player = (function() {
 	Player.prototype.reset = function() {
 		this.pos.x = INITIAL_POSITION_X;
 		this.pos.y = INITIAL_POSITION_Y;
+		this.score = 0;
 	};
 
 	Player.prototype.onFrame = function(delta) {
@@ -66,6 +68,7 @@ window.Player = (function() {
 			this.crashsound.play();
 			return this.game.gameover();
 		}
+		
 	};
 
 	return Player;

@@ -10,6 +10,10 @@ window.Game = (function() {
 	var Game = function(el) {
 		this.el = el;
 		this.score = 0;
+		this.pipeSize = 0;
+		this.pipeSizeT = 0;
+		this.pipeY = 0;
+		this.pipeTY = 0;
 		this.player = new window.Player(this.el.find('.Player'), this);
 
 		this.ground1 = new window.Ground(this.el.find('.G1'), this, true, 'G1');
