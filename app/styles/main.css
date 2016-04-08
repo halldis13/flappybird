@@ -202,8 +202,7 @@ Til að byrja með eru þeir fyrst harðkóðaðir og eiga svo að breytast
   margin-left: -0.5em;
   height: 5em;
   width: 5em;
-  background: pink;
-  background-image: url("../images/niall.jpg");
+  background-image: url("../images/niall.png");
   background-size: 100% 100%;
   opacity: 0.5;
 }
@@ -214,8 +213,7 @@ Til að byrja með eru þeir fyrst harðkóðaðir og eiga svo að breytast
   margin-left: -0.5em;
   height: 5em;
   width: 5em;
-  background: pink;
-  background-image: url("../images/zayne.jpg");
+  background-image: url("../images/zayne.png");
   background-size: 100% 100%;
   opacity: 0.5;
 }
@@ -226,8 +224,7 @@ Til að byrja með eru þeir fyrst harðkóðaðir og eiga svo að breytast
   margin-left: -0.5em;
   height: 15em;
   width: 15em;
-  background: pink;
-  background-image: url("../images/liam.jpg");
+  background-image: url("../images/liam.png");
   background-size: 100% 100%;
   opacity: 0.5;
 }
@@ -238,8 +235,7 @@ Til að byrja með eru þeir fyrst harðkóðaðir og eiga svo að breytast
   margin-left: -0.5em;
   height: 10em;
   width: 10em;
-  background: pink;
-  background-image: url("../images/louis.jpg");
+  background-image: url("../images/louis.png");
   background-size: 100% 100%;
   opacity: 0.5;
 }
@@ -250,8 +246,7 @@ Til að byrja með eru þeir fyrst harðkóðaðir og eiga svo að breytast
   margin-left: -0.5em;
   height: 15em;
   width: 15em;
-  background: pink;
-  background-image: url("../images/harry.jpg");
+  background-image: url("../images/harry.png");
   background-size: 100% 100%;
   opacity: 0.5;
 }
@@ -262,19 +257,21 @@ Til að byrja með eru þeir fyrst harðkóðaðir og eiga svo að breytast
   margin-left: -0.5em;
   width: 5em;
   height: 5em;
-  background: yellow;
+  background-image: url("../images/flappybird.png");
+  background-size: 100% 100%;
   /*transform: translate(40em, 20em)*/
 }
 
 .Player-wings {
   position: absolute;
-  left: 0.5em;
-  top: 2.2em;
-  height: 1.5em;
-  width: 3.2em;
-  background: red;
-  -webkit-transform-origin: top left;
-  transform-origin: top left;
+  left: 0.2em;
+  top:1em;
+  height: 2em;
+  width: 2em;
+  background-image: url("../images/wing.png");
+  background-size: 100% 100%;
+  -webkit-transform-origin: bottom left;
+  transform-origin: bottom left;
   -webkit-animation: 0.3s flap alternate infinite;
   animation: 0.3s flap alternate infinite;
 }
@@ -283,11 +280,12 @@ Til að byrja með eru þeir fyrst harðkóðaðir og eiga svo að breytast
   from {
     -webkit-transform: rotateX(0);
     transform: rotateX(0);
+
   }
 
   to {
-    -webkit-transform: rotateX(180deg);
-    transform: rotateX(180deg);
+    -webkit-transform: rotateX(90deg);
+    transform: rotateX(90deg);
   }
 }
 
@@ -384,6 +382,7 @@ body {
 }
 
 #mute {
+  position: absolute;
 	width: 70px;
     height: 70px;
     cursor: pointer;

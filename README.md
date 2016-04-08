@@ -27,20 +27,14 @@ grunt server
 ### Additional requirements.
 * (10%) All moving elements should be hardware accelerated.
 	* veit ekki hvað þetta þýðir nkl?
-* (10%) There should be a background element moving in paralax to the foreground, f.ex. a repeating cloud image. Note: it is not enough that the ground moves at different speed than the rest of the scene!
-	* laga þannig að það sé flottari mynd af 1D, (ekki hvítt utan um hausana)
 * (10%) The character rotates into his direction. The player should either have a sprite animation or some element (like a wing) which animates when flapping. 
-	* finna sprite og setja í staðinn fyrir kassann sem hann er núna
-	* láta vængina vera flotta lika og láta þá flap-a eins og þeir gera núna 
 	* í byrjun á hann að snúa áfram
 	* þegar ýtt er á jump á flappy að vísa upp
 	* þegar hann er búin að falla í 1 sek byrjar hann að snúa sér niður á við þangað til hann vísar alveg niður 
 	* nema hann jump- i aftur þá á hann að vísa aftur upp
 * (15% )Background music and sound effects for flapping and colliding. Mute support.
-	* setja 8bit one direction lag (svo þetta verði eins og alvöru tölvuleikur!)
 	* sound effect þegar vængirnir flap-a
 	* sound effect þegar hann klessir á  pípur ( ekki hægt að testa nema þegar hægt er ða klessa á pípur)
-	* færa mute takkan neðst til hægri eða vinstri inni í leikinn (þannig það sé ofaná "moldinni")
 
 ### Bonus points.
 * (10%) The game is responsive, scales down and playable on mobile and tablets.
@@ -53,3 +47,4 @@ grunt server
 * (5%) Gets one point for every gap that the player successfully passes.
 
 * (10%) If a player loses he should see his score and a button which starts the game again.
+* (10%) There should be a background element moving in paralax to the foreground, f.ex. a repeating cloud image. Note: it is not enough that the ground moves at different speed than the rest of the scene!
