@@ -9,6 +9,7 @@ window.Game = (function() {
 	 */
 	var Game = function(el) {
 		this.el = el;
+		this.score = 0;
 		this.player = new window.Player(this.el.find('.Player'), this);
 
 		this.ground1 = new window.Ground(this.el.find('.G1'), this, true, 'G1');
@@ -118,6 +119,10 @@ window.Game = (function() {
 		this.pipe4.reset(true);
 		this.pipe5.reset(true);
 		this.pipe6.reset(true);
+		this.score = 0;
+		$('div.Score').html(this.score);
+		$('div.FinalScore').html(this.score);
+		
 
 		/*this.cloud1.reset(true);
 		this.cloud2.reset(true);

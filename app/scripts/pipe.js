@@ -17,6 +17,7 @@ window.Pipe = (function() {
 		this.pos = { x: 0, y: 0 };
 		this.first = first;
 		this.name = name;
+		this.mark = 0;
 	};
 
 	/**
@@ -29,6 +30,7 @@ window.Pipe = (function() {
 		}
 		//If game is restarted, pipes should wait awhile before appearing on the screen
 		if (this.first === true){
+			this.mark = 0;
 			switch(this.name) {
 		    case 'PB1':
 		        this.pos.y = 38;
@@ -54,47 +56,28 @@ window.Pipe = (function() {
 		        this.pos.y = 0;
 				this.pos.x = 203;
 		        break;
-		    default:
-		        //default   code block
 			}
 			this.first = false;
 		}
 		//Else pipes should reappear on the right whenever they go out of bounds to the left
 		else if (this.first === false){
-			switch(this.name) {
-		    case 'PB1':
-		        this.pos.y = 38;
-				this.pos.x = 103;
-		        break;
-		    case 'PB2':
-		        this.pos.y = 38;
-				this.pos.x = 103;
-		        break;
-		    case 'PB3':
-		        this.pos.y = 38;
-				this.pos.x = 103;
-		        break;
-		    case 'PT1':
-		        this.pos.y = 0;
-				this.pos.x = 103;
-		        break;
-		    case 'PT2':
-		        this.pos.y = 0;
-				this.pos.x = 103;
-		        break;
-		    case 'PT3':
-		        this.pos.y = 0;
-				this.pos.x = 103;
-		        break;
-		    default:
+			this.pos.x = INITIAL_POSITION_X;
+			this.mark = 0;
 		        //default   code block
-			}
+			
 		}
-	};
+	}
 
 	Pipe.prototype.onFrame = function(delta) {
 		this.pos.x -= delta * SPEED;
-
+		if (this.pos.x < 31 && this.pos.x > 29 && 
+			(this.name === 'PB1' || this.name === 'PB2' || this.name === 'PB3') && this.mark === 0){
+			this.game.score +=1;
+			console.log(this.game.score);
+			this.mark = 1;
+			$('div.Score').html(this.game.score);
+			$('div.FinalScore').html(this.game.score);
+		}
 		this.checkOutOfBounds();
 
 		// Update UI
