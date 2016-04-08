@@ -75,7 +75,7 @@ window.Pipe = (function() {
 		this.pos.x -= delta * SPEED;
 
 		//if flappy is above the pipe
-		if (this.pos.x < 34 && this.pos.x > 19){
+		if (this.pos.x < 36 && this.pos.x > 19){
 
 			//if pipe is a bottom part
 			if ((this.name === 'PB1' || this.name === 'PB2' || this.name === 'PB3') && this.mark === 0){
@@ -94,14 +94,14 @@ window.Pipe = (function() {
 					console.log(this.game.pipeSize);
 				}
 				//check for collision
-				this.collision(this.game.pipeY, this.game.pipeSize/10, "B");
+				this.collision(this.game.pipeSize/10, "B");
 			}
 			//if pipe is a top part
 			else if ((this.name === 'PT1' || this.name === 'PT2' || this.name === 'PT3') && this.mark === 0){
 
 				//set top pipe which is in use now
 				this.game.pipeSizeT = this.size;
-				this.collision(this.game.pipeTY, this.game.pipeSizeT/10, "T");
+				this.collision(this.game.pipeSizeT/10, "T");
 			}
 		}
 		//checko if pipe has reach the left end	
@@ -142,7 +142,7 @@ window.Pipe = (function() {
 		}
 
 	};
-	Pipe.prototype.collision = function(pos, size, part) {
+	Pipe.prototype.collision = function(size, part) {
 
 		//get the y position of the bird
 		var birdY = this.game.player.pos.y;

@@ -272,10 +272,9 @@ Til að byrja með eru þeir fyrst harðkóðaðir og eiga svo að breytast
   background-size: 100% 100%;
   -webkit-transform-origin: bottom left;
   transform-origin: bottom left;
-  -webkit-animation: 0.3s flap alternate infinite;
-  animation: 0.3s flap alternate infinite;
+  /*-webkit-animation: 0.3s flap alternate infinite;
+  animation: 0.3s flap alternate infinite;*/
 }
-
 @-webkit-keyframes flap {
   from {
     -webkit-transform: rotateX(0);

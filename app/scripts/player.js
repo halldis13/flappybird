@@ -10,6 +10,7 @@ window.Player = (function() {
 	var HEIGHT = 5;
 	var INITIAL_POSITION_X = 30;
 	var INITIAL_POSITION_Y = 25;
+	var INITIAL_ROTATON = 0;
 
 	var Player = function(el, game) {
 		this.el = el;
@@ -18,6 +19,8 @@ window.Player = (function() {
 		this.crashsound = document.getElementById('crash');
 		this.flapsound = document.getElementById('flap');
 		this.score = 0;
+		this.speed = SPEED;
+		this.rotation = 0;
 	};
 
 	/**
@@ -27,42 +30,48 @@ window.Player = (function() {
 		this.pos.x = INITIAL_POSITION_X;
 		this.pos.y = INITIAL_POSITION_Y;
 		this.score = 0;
+		this.rotation = 0;
 	};
 
 	Player.prototype.onFrame = function(delta) {
-		/*commentaði út því hann á bara að breyta um y stöðu þegar ýtt er á space
-		if (Controls.keys.right) {
-			this.pos.x += delta * SPEED;
-		}
-		if (Controls.keys.left) {
-			this.pos.x -= delta * SPEED;
-		}
-		if (Controls.keys.down) {
-			this.pos.y += delta * SPEED;
-		}
-		if (Controls.keys.up) {
-			this.pos.y -= delta * SPEED;
-		}*/
-		//margfalda með 5 svo hann hækki meira en hann fellur
+		/// if space, click og tap, the player's y pos decreases and rotation decreases
 		if (Controls.keys.space || Controls.keys.mouse || Controls.keys.tap){
 			this.pos.y -= (delta * SPEED)*5;
+			this.flapsound.play();
+			if (this.rotation > 0){
+				this.rotation-=10;
+			}
+			else if (this.rotation >= -85){
+				this.rotation-=3;
+			}
+			this.el.find('.Player-wings').css('animation', '0.3s flap alternate infinite');
 		}
-
+		//otherwise player's y pos and rotation increase
+		else{
+			this.el.find('.Player-wings').css('animation', '0.3s flap alternate 0');
+			
+			if (this.rotation > 45){
+				this.rotation+=3;
+			}
+			if (this.rotation <= 85){
+				this.rotation+=1.5;
+			}
+		}
 		$( ".GameCanvas" ).mousedown(function() {
   			this.pos.y -= (delta * SPEED)*4;
+
 		});
 
-		//test
+		//otherwise it increases
 		this.pos.y += delta * SPEED;
 
 		this.checkCollisionWithBounds();
 
 		// Update UI
-		this.el.css('transform', 'translateZ(0) translate(' + this.pos.x + 'em, ' + this.pos.y + 'em)');
+		this.el.css('transform', 'translateZ(0) translate(' + this.pos.x + 'em, ' + this.pos.y + 'em) rotate('+ this.rotation + 'deg)');
 	};
 
 	Player.prototype.checkCollisionWithBounds = function() {
-		this.flapsound.play()
 
 		if (this.pos.y < 0 || this.pos.y + HEIGHT > this.game.WORLD_HEIGHT-9.5) {
 			this.crashsound.play();
