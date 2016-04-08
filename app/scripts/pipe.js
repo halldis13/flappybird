@@ -64,7 +64,7 @@ window.Pipe = (function() {
 		//Else pipes should reappear on the right whenever they go out of bounds to the left
 		else if (restart === false){	
 			this.pos.x = INITIAL_POSITION_X;
-			this.mark = 0;			
+
 		}
 		//so scorepoint for pipe is reset
 		this.mark = 0;
@@ -77,17 +77,16 @@ window.Pipe = (function() {
 		//if flappy is above the pipe
 		if (this.pos.x < 34 && this.pos.x > 19){
 
-
 			//if pipe is a bottom part
 			if ((this.name === 'PB1' || this.name === 'PB2' || this.name === 'PB3') && this.mark === 0){
 				//set bottom pipe which is in use now
 				this.game.pipeSize = this.size;
 
 				//if flappy has gone through half the pipe, he get's a point
-				if (this.pos.x < 36 && this.pos.x > 34){
-
+				if (this.pos.x < 31 && this.pos.x > 29){
 					//set the score and mark this pipe so he'll only get one point for it
 					this.game.score +=1;
+					console.log(this.game.score);
 					this.mark = 1;
 					$('div.Score').html(this.game.score);
 					$('div.FinalScore').html(this.game.score);
@@ -150,20 +149,24 @@ window.Pipe = (function() {
 
 		//if checking for bottom part collision
 		if (part === "B"){
-			/*console.log("-----");
-			console.log(this.name);
-			console.log("bird: " + birdY);
-			console.log("pos: " + pos);
-			console.log("size: " +size);
-			console.log("-----");*/
 			//if he collides with the pipe part, game is over
 			if (birdY+5 > this.game.WORLD_HEIGHT-9.5-size){
 				this.crashsound.play();
 				this.first = true;
 				return this.game.gameover();
 			}
-		}
 		
+		}
+
+		//if checking for top part collision
+		if (part === "T"){
+			//if he collides with the pipe part, game is over
+			if (birdY < 0+size){
+				this.crashsound.play();
+				this.first = true;
+				return this.game.gameover();
+			}
+		}		
 
 	};
 
