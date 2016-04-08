@@ -19,14 +19,128 @@ Annars eru 6 partar, 3 neðri helmingar og 3 efri
 Til að byrja með eru þeir fyrst harðkóðaðir og eiga svo að breytast
 */
 
-.Ground {
+.G1{
   position: absolute;
   margin-top: -0.5em;
   margin-left: -0.5em;
   height: 10em;
   width: 10em;
   background: brown;
+  background-image: url("../images/ground.png");
+  background-size: 100% 100%;
 }
+.G2{
+  position: absolute;
+  margin-top: -0.5em;
+  margin-left: -0.5em;
+  height: 10em;
+  width: 10em;
+  background: brown;
+  background-image: url("../images/ground.png");
+  background-size: 100% 100%;
+}
+.G3{
+  position: absolute;
+  margin-top: -0.5em;
+  margin-left: -0.5em;
+  height: 10em;
+  width: 10em;
+  background: brown;
+  background-image: url("../images/ground.png");
+  background-size: 100% 100%;
+}
+.G4{
+  position: absolute;
+  margin-top: -0.5em;
+  margin-left: -0.5em;
+  height: 10em;
+  width: 10em;
+  background: brown;
+  background-image: url("../images/ground.png");
+  background-size: 100% 100%;
+}
+.G5{
+  position: absolute;
+  margin-top: -0.5em;
+  margin-left: -0.5em;
+  height: 10em;
+  width: 10em;
+  background: brown;
+  background-image: url("../images/ground.png");
+  background-size: 100% 100%;
+}
+.G6{
+  position: absolute;
+  margin-top: -0.5em;
+  margin-left: -0.5em;
+  height: 10em;
+  width: 10em;
+  background: brown;
+  background-image: url("../images/ground.png");
+  background-size: 100% 100%;
+}
+.G7{
+  position: absolute;
+  margin-top: -0.5em;
+  margin-left: -0.5em;
+  height: 10em;
+  width: 10em;
+  background: brown;
+  background-image: url("../images/ground.png");
+  background-size: 100% 100%;
+}
+.G8{
+  position: absolute;
+  margin-top: -0.5em;
+  margin-left: -0.5em;
+  height: 10em;
+  width: 10em;
+  background: brown;
+  background-image: url("../images/ground.png");
+  background-size: 100% 100%;
+}
+.G9{
+  position: absolute;
+  margin-top: -0.5em;
+  margin-left: -0.5em;
+  height: 10em;
+  width: 10em;
+  background: brown;
+  background-image: url("../images/ground.png");
+  background-size: 100% 100%;
+}
+.G10{
+  position: absolute;
+  margin-top: -0.5em;
+  margin-left: -0.5em;
+  height: 10em;
+  width: 10em;
+  background: brown;
+  background-image: url("../images/ground.png");
+  background-size: 100% 100%;
+}
+.G11{
+  position: absolute;
+  margin-top: -0.5em;
+  margin-left: -0.5em;
+  height: 10em;
+  width: 10em;
+  background: brown;
+  background-image: url("../images/ground.png");
+  background-size: 100% 100%;
+}
+
+.G12{
+  position: absolute;
+  margin-top: -0.5em;
+  margin-left: -0.5em;
+  height: 10em;
+  width: 10em;
+  background: brown;
+  background-image: url("../images/ground.png");
+  background-size: 100% 100%;
+}
+
 
 .PB1 {
   position: absolute;
