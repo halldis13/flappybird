@@ -21,12 +21,12 @@ window.Cloud = (function() {
 
 	/**
 	 * Resets the state of the cloud.
-	 			start	position 	
-	 	D1:   	right 	bottom		
-	 	D2: 	left 	top 		
-	 	D3: 	top 	middle	 		
-	 	D4: 	bottom 	left 		
-	 	D5: 	corner 	topleft
+	 			start	position 1D member	
+	 	D1:   	right 	bottom		niall
+	 	D2: 	left 	top 		zayne
+	 	D3: 	top 	middle	 	liam
+	 	D4: 	bottom 	left 		louis
+	 	D5: 	corner 	topleft		harry
 	 		 */
 	Cloud.prototype.reset = function() {
 		//clouds should wait awhile before appearing on the screen when initializing first game
@@ -35,14 +35,14 @@ window.Cloud = (function() {
 			switch(this.name) {
 		    case 'D1':
 		        this.pos.y = 10;
-				this.pos.x = 123;
+				this.pos.x = 240;
 		        break;
 		    case 'D2':
 		        this.pos.y = 10;
-				this.pos.x = -70;
+				this.pos.x = 120;
 		        break;
 		    case 'D3':
-		        this.pos.y = 0;
+		        this.pos.y = 120;
 				this.pos.x = 30;
 		        break;
 		    case 'D4':
@@ -50,8 +50,8 @@ window.Cloud = (function() {
 				this.pos.x = 90;
 		        break;
 		    case 'D5':
-		        this.pos.y = -10;
-				this.pos.x = -30;
+		        this.pos.y = 50;
+				this.pos.x = 50;
 		        break;
 		    default:
 		        //default   code block
@@ -68,14 +68,14 @@ window.Cloud = (function() {
 		        break;
 		    case 'D2':
 		        this.pos.y = 10;
-				this.pos.x = -50;
+				this.pos.x = -100;
 		        break;
 		    case 'D3':
 		        this.pos.y = 0;
 				this.pos.x = 70;
 		        break;
 		    case 'D4':
-		        this.pos.y = 140;
+		        this.pos.y = 300;
 				this.pos.x = 15;
 		        break;
 		    case 'D5':
@@ -91,7 +91,7 @@ window.Cloud = (function() {
 	Cloud.prototype.onFrame = function(delta) {
 		switch(this.name) {
 		    case 'D1':
-		        this.pos.x -= delta * SPEED  ;
+		        this.pos.x -= delta * SPEED/2  ;
 		        break;
 		    case 'D2':
 		        this.pos.x += delta * SPEED;
@@ -103,8 +103,8 @@ window.Cloud = (function() {
 		        this.pos.y -= delta * SPEED;
 		        break;
 		    case 'D5':
-		        this.pos.x += delta * SPEED*2;
-		       	this.pos.y += delta * SPEED;
+		        this.pos.x += delta * SPEED/2;
+		       	this.pos.y += delta * SPEED/4;
 		        break;
 		    default:
 		        //default   code block
