@@ -18,9 +18,6 @@ grunt server
 
 ## TODO
 
-### Additional requirements.
-* (10%) All moving elements should be hardware accelerated.
-	* ??
 
 ### Bonus points.
 * (10%) The game is responsive, scales down and playable on mobile and tablets.
@@ -39,3 +36,4 @@ grunt server
 * (10%) The character rotates into his direction. The player should either have a sprite animation or some element (like a wing) which animates when flapping. 
 
 * (15% )Background music and sound effects for flapping and colliding. Mute support.
+* (10%) All moving elements should be hardware accelerated.
