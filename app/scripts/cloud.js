@@ -50,8 +50,8 @@ window.Cloud = (function() {
 				this.pos.x = 90;
 		        break;
 		    case 'D5':
-		        this.pos.y = -10;
-				this.pos.x = -30;
+		        this.pos.y = -100;
+				this.pos.x = -100;
 		        break;
 		    default:
 		        //default   code block
@@ -103,8 +103,8 @@ window.Cloud = (function() {
 		        this.pos.y -= delta * SPEED;
 		        break;
 		    case 'D5':
-		        this.pos.x += delta * SPEED*2;
-		       	this.pos.y += delta * SPEED;
+		        this.pos.x += delta * SPEED;
+		       	this.pos.y += delta * SPEED/2;
 		        break;
 		    default:
 		        //default   code block

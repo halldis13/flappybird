@@ -21,7 +21,6 @@ grunt server
 	* ATH, gera þannig að tapp geri það sama og space og click
 * (10%) Pipes and the ground slowly move to the left.
 	* Laga þannig að pipe séu með mismunandi bili
-	* laga þannig að ground sé repeat
 * (10%) If the player collides with the ground or a pipe, he loses instantly.
 	* vantar að láta hann tapa þegar hann klessir á pípu
 * (5%) Gets one point for every gap that the player successfully passes.

@@ -11,6 +11,19 @@ window.Game = (function() {
 		this.el = el;
 		this.player = new window.Player(this.el.find('.Player'), this);
 
+		this.ground1 = new window.Ground(this.el.find('.G1'), this, true, 'G1');
+		this.ground2 = new window.Ground(this.el.find('.G2'), this, true, 'G2');
+		this.ground3 = new window.Ground(this.el.find('.G3'), this, true, 'G3');
+		this.ground4 = new window.Ground(this.el.find('.G4'), this, true, 'G4');
+		this.ground5 = new window.Ground(this.el.find('.G5'), this, true, 'G5');
+		this.ground6 = new window.Ground(this.el.find('.G6'), this, true, 'G6');
+		this.ground7 = new window.Ground(this.el.find('.G7'), this, true, 'G7');
+		this.ground8 = new window.Ground(this.el.find('.G8'), this, true, 'G8');
+		this.ground9 = new window.Ground(this.el.find('.G9'), this, true, 'G9');
+		this.ground10 = new window.Ground(this.el.find('.G10'), this, true, 'G10');
+		this.ground11 = new window.Ground(this.el.find('.G11'), this, true, 'G11');
+		this.ground12 = new window.Ground(this.el.find('.G12'), this, true, 'G12');
+
 		this.pipe1 = new window.Pipe(this.el.find('.PB1'), this, true, 'PB1');
 		this.pipe2 = new window.Pipe(this.el.find('.PT1'), this, true, 'PT1');
 		this.pipe3 = new window.Pipe(this.el.find('.PB2'), this, true, 'PB2');
@@ -24,7 +37,7 @@ window.Game = (function() {
 		this.cloud4 = new window.Cloud(this.el.find('.D4'), this, true, 'D4');
 		this.cloud5 = new window.Cloud(this.el.find('.D5'), this, true, 'D5');
 		
-		this.ground = new window.Ground(this.el.find('.Ground'), this);
+
 		this.isPlaying = false;
 
 		// Cache a bound onFrame since we need it each frame.
@@ -49,12 +62,18 @@ window.Game = (function() {
 		// Update game entities.
 		this.player.onFrame(delta);
 
-		this.pipe1.onFrame(delta);
-		this.pipe2.onFrame(delta);
-		this.pipe3.onFrame(delta);
-		this.pipe4.onFrame(delta);
-		this.pipe5.onFrame(delta);
-		this.pipe6.onFrame(delta);
+		this.ground1.onFrame(delta);
+		this.ground2.onFrame(delta);
+		this.ground3.onFrame(delta);
+		this.ground4.onFrame(delta);
+		this.ground5.onFrame(delta);
+		this.ground6.onFrame(delta);
+		this.ground7.onFrame(delta);
+		this.ground8.onFrame(delta);
+		this.ground9.onFrame(delta);
+		this.ground10.onFrame(delta);
+		this.ground11.onFrame(delta);
+		this.ground12.onFrame(delta);
 
 		this.cloud1.onFrame(delta);
 		this.cloud2.onFrame(delta);
@@ -62,7 +81,14 @@ window.Game = (function() {
 		this.cloud4.onFrame(delta);
 		this.cloud5.onFrame(delta);
 
-		this.ground.onFrame(delta);
+		this.pipe1.onFrame(delta);
+		this.pipe2.onFrame(delta);
+		this.pipe3.onFrame(delta);
+		this.pipe4.onFrame(delta);
+		this.pipe5.onFrame(delta);
+		this.pipe6.onFrame(delta);
+
+
 
 		// Request next frame.
 		window.requestAnimationFrame(this.onFrame);
@@ -99,7 +125,7 @@ window.Game = (function() {
 		this.cloud4.reset(true);
 		this.cloud5.reset(true);*/
 
-		this.ground.reset();
+		//this.ground.reset();
 	};
 
 	/**
