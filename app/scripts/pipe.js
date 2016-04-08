@@ -15,11 +15,9 @@ window.Pipe = (function() {
 		this.el = el;
 		this.game = game;
 		this.pos = { x: 0, y: 0 };
-		this.first = first;
 		this.name = name;
 		this.mark = 0;
 		this.size = 100;
-		this.game.pipeSize = 100;
 		this.crashsound = document.getElementById('crash');
 	};
 
@@ -28,30 +26,26 @@ window.Pipe = (function() {
 	 * Resets the state of the player for a new game.
 	 */
 	Pipe.prototype.reset = function(restart) {
-		//If game is restarted
-		if (restart === true){
-			this.first = true;
-		}
+
 		//If game is restarted, pipes should wait awhile before appearing on the screen
-		if (this.first === true){
-			this.mark = 0;
+		if (restart){
+			//reset everything
+			this.size = 100;
+			this.game.pipeSize = 10;
 			$('.' + this.name).height(HEIGHT*10);
 			$('.' + this.name).width(WIDTH*10);
 			switch(this.name) {
 		    case 'PB1':
 		        this.pos.y = 38;
 				this.pos.x = 123;
-				//.game.pipeSize = 100;
 		        break;
 		    case 'PB2':
 		        this.pos.y = 38;
 				this.pos.x = 163;
-				//this.game.pipeSize = 100;
 		        break;
 		    case 'PB3':
 		        this.pos.y = 38;
 				this.pos.x = 203;
-				//this.game.pipeSize = 100;
 		        break;
 		    case 'PT1':
 		        this.pos.y = 0;
@@ -66,44 +60,52 @@ window.Pipe = (function() {
 				this.pos.x = 203;
 		        break;
 			}
-			this.first = false;
 		}
 		//Else pipes should reappear on the right whenever they go out of bounds to the left
-		else if (this.first === false){
-			//			
+		else if (restart === false){	
 			this.pos.x = INITIAL_POSITION_X;
-			this.mark = 0;
-		        //default   code block
-			
+			this.mark = 0;			
 		}
+		//so scorepoint for pipe is reset
+		this.mark = 0;
 	}
 
 	Pipe.prototype.onFrame = function(delta) {
+		//move to the left
 		this.pos.x -= delta * SPEED;
-		if (this.pos.x < 36 && this.pos.x > 34 && 
-			(this.name === 'PB1' || this.name === 'PB2' || this.name === 'PB3') && this.mark === 0){
-			this.game.score +=1;
-			this.game.pipeSize = this.size;
-			this.mark = 1;
-			this.game.pipeY = this.pos.y;
-			$('div.Score').html(this.game.score);
-			$('div.FinalScore').html(this.game.score);
-			
 
-		}
-		else if (this.pos.x < 36 && this.pos.x > 34 && 
-			(this.name === 'PT1' || this.name === 'PT2' || this.name === 'PT3') && this.mark === 0){
-			this.mark = 1;
-			this.game.pipeTY = this.pos.y;
-			this.game.pipeSizeT = this.size;
-			
-		}
+		//if flappy is above the pipe
 		if (this.pos.x < 34 && this.pos.x > 19){
-			this.collision(this.game.pipeY, this.game.pipeSize/10, "B");
-			this.collision(this.game.pipeTY, this.game.pipeSizeT/10, "T");
-		}
 
-		
+
+			//if pipe is a bottom part
+			if ((this.name === 'PB1' || this.name === 'PB2' || this.name === 'PB3') && this.mark === 0){
+				//set bottom pipe which is in use now
+				this.game.pipeSize = this.size;
+
+				//if flappy has gone through half the pipe, he get's a point
+				if (this.pos.x < 36 && this.pos.x > 34){
+
+					//set the score and mark this pipe so he'll only get one point for it
+					this.game.score +=1;
+					this.mark = 1;
+					$('div.Score').html(this.game.score);
+					$('div.FinalScore').html(this.game.score);
+
+					console.log(this.game.pipeSize);
+				}
+				//check for collision
+				this.collision(this.game.pipeY, this.game.pipeSize/10, "B");
+			}
+			//if pipe is a top part
+			else if ((this.name === 'PT1' || this.name === 'PT2' || this.name === 'PT3') && this.mark === 0){
+
+				//set top pipe which is in use now
+				this.game.pipeSizeT = this.size;
+				this.collision(this.game.pipeTY, this.game.pipeSizeT/10, "T");
+			}
+		}
+		//checko if pipe has reach the left end	
 		this.checkOutOfBounds();
 
 		// Update UI
@@ -111,44 +113,55 @@ window.Pipe = (function() {
 	};
 
 	Pipe.prototype.checkOutOfBounds = function() {
+		//if pipe has gone off screen
 		if (this.pos.x +WIDTH < 0){
+			//if it is a bottom pipe
 			if (this.name === 'PB1' || this.name === 'PB2' || this.name === 'PB3'){
-				//bottom pipe min 0 max 300
-				/*100 - 38*
-				150 - 33
-				200 - 28
-				250 - 23
-				300 - 18
-				*/
+
+				//calculate the new size and y-position of the pipe when it reappears on the right side of the screen
+
+				//randomize the size of the bottom half (min size = 0, max size = 300)
 				this.size = Math.floor(Math.random() * 300) ;
-				this.game.pipeSize = this.size;
+
 				$('.' + this.name).height(this.size);
 
+				//position of y axis is 48- size in em
 				this.pos.y = 48-((this.size)/10);
 
+				//Set the bottom half to the game so the top half can access it
+				this.game.newBSize = this.size;
+
 			}
+			//If it is a top pipe	
 			else{
-				//top pipe		
-				$('.' + this.name).height(300-this.game.pipeSize);
-				this.size = 300-this.game.pipeSize;
-				//this.pos.y = 28; //(38-10);
+				// the size of the top half is 300-size of the bottom half	
+				$('.' + this.name).height(300-this.game.newBSize);
+				this.size = 300-this.game.newBSize;
 			}
-			return this.reset();
+
+			return this.reset(false);
 		}
 
 	};
 	Pipe.prototype.collision = function(pos, size, part) {
+
+		//get the y position of the bird
 		var birdY = this.game.player.pos.y;
+
+		//if checking for bottom part collision
 		if (part === "B"){
-			console.log("-----");
+			/*console.log("-----");
+			console.log(this.name);
 			console.log("bird: " + birdY);
 			console.log("pos: " + pos);
 			console.log("size: " +size);
-			console.log("-----");
-			if (birdY >= pos){
-			this.crashsound.play();
-			return this.game.gameover();
-		}
+			console.log("-----");*/
+			//if he collides with the pipe part, game is over
+			if (birdY+5 > this.game.WORLD_HEIGHT-9.5-size){
+				this.crashsound.play();
+				this.first = true;
+				return this.game.gameover();
+			}
 		}
 		
 
