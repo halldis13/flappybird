@@ -13,7 +13,7 @@ This game project has the following:
 ```
 npm install
 bower install
-grunt server
+grunt serve
 ```
 
 ## TODO
